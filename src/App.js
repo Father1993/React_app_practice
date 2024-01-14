@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import "./styles/App.css";
+import React, { useRef, useState } from "react";
 import PostList from "./components/PostList";
+import MyButton from "./components/UI/button/MyButton";
+import MyInput from "./components/UI/input/MyInput";
+import "./styles/App.css";
+import PostForm from "./components/PostForm";
 
 function App() {
 
@@ -10,9 +13,19 @@ function App() {
     {id: 3, title: "JavaScript 3", body: "Description"},
   ])
 
+  const createPost = (newPost) => {
+    setPosts([...posts, newPost])
+  }
+
+  // Получаем post из дочернего компонента
+  const removePost = (post) => {
+    setPosts(posts.filter(p => p.id !== post.id))
+  }
+
   return (
     <div className="App">
-      <PostList posts={posts}/>
+      <PostForm create={createPost}/>
+      <PostList remove={removePost} posts={posts} title="Список постов JS"/>
     </div>
   );
 }
