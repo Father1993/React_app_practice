@@ -1,12 +1,10 @@
 import React, { useMemo, useState } from "react";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
-import "./styles/App.css";
-import MySelect from "./components/UI/select/MySelect";
-import MyInput from "./components/UI/input/MyInput";
 import PostFilter from "./components/PostFilter";
 import MyModal from "./components/UI/MyModal/MyModal";
 import MyButton from "./components/UI/button/MyButton";
+import "./styles/App.css";
 
 function App() {
 
